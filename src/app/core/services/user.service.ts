@@ -201,7 +201,7 @@ export class UserService extends Base {
               this.dataSet.loginResult.Token = Data.User.GUID;
               this._profile.next(Object.assign({}, this.dataSet).loginResult);
               paramsHandler.addParam('AccountRefID', Data.User.AccountID);
-              this.accountList(paramsHandler);
+              // this.accountList(paramsHandler);
             } else {
               this.resetDataSet();
               let loginResult = new LoginResult();
@@ -414,37 +414,37 @@ export class UserService extends Base {
     });
     return subscription;
   }
-  accountList$(paramsHandler: ParamsHandler): Observable<any> {
-    const url =
-      this.getServiceUrl() + '/accountlist?' + paramsHandler.urlParamaters;
-    return this.http.get(url, { params: this.tokenParams });
-  }
+  // accountList$(paramsHandler: ParamsHandler): Observable<any> {
+  //   const url =
+  //     this.getServiceUrl() + '/accountlist?' + paramsHandler.urlParamaters;
+  //   return this.http.get(url, { params: this.tokenParams });
+  // }
 
-  accountList(paramsHandler: ParamsHandler) {
-    const subscription = this.accountList$(paramsHandler).subscribe(
-      (resp) => {
-        const { Data } = resp;
-        if (Data) {
-          this.dataSet.accountList = Data.Account;
-          this.SelectedAccountID = Data.CurrentAccountID;
-          this._accountList.next(Object.assign({}, this.dataSet).accountList);
-        }
-      },
-      (error) => {
-        if (error.status === 401) {
-          // Unauthorized
-          this.router.navigate(['/logout']);
-        } else {
-          // paramsHandler.parent.messageOnNotify(
-          //   JSON.stringify(error),
-          //   'close',
-          //   'red-snackbar'
-          // );
-        }
-      }
-    );
-    return subscription;
-  }
+  // accountList(paramsHandler: ParamsHandler) {
+  //   const subscription = this.accountList$(paramsHandler).subscribe(
+  //     (resp) => {
+  //       const { Data } = resp;
+  //       if (Data) {
+  //         this.dataSet.accountList = Data.Account;
+  //         this.SelectedAccountID = Data.CurrentAccountID;
+  //         this._accountList.next(Object.assign({}, this.dataSet).accountList);
+  //       }
+  //     },
+  //     (error) => {
+  //       if (error.status === 401) {
+  //         // Unauthorized
+  //         this.router.navigate(['/logout']);
+  //       } else {
+  //         // paramsHandler.parent.messageOnNotify(
+  //         //   JSON.stringify(error),
+  //         //   'close',
+  //         //   'red-snackbar'
+  //         // );
+  //       }
+  //     }
+  //   );
+  //   return subscription;
+  // }
 
   restorePointList$(paramsHandler: ParamsHandler): Observable<any> {
     const url =

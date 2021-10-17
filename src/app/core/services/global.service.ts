@@ -36,7 +36,7 @@ export class GlobalService {
       }
     });
   }
-  public apiRequest<T>(request: RequestBuilder): Observable<Response<T>> {
+  public apiRequest<T>(request: RequestBuilder): Observable<any> {
     return request.call(this);
   }
   get userLoginAsObservable() {

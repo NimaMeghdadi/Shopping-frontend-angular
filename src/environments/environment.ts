@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  serviceBaseUrl : 'https://localhost:3000/',
+  serviceBaseUrl : 'http://localhost:3000/',
   APP_NAME : "ShoppingMall(H&N)",
   // HomeUrl : 'https://stage.dibuses.com/#/login', //"http://landing-page-stage.s3-website-us-east-1.amazonaws.com/#/login"
   // SHAPE_FILE : "https://mapshapefilesstage.s3.amazonaws.com/"

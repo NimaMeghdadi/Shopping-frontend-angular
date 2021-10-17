@@ -46,7 +46,7 @@ export class ToolbarComponent extends Page implements OnInit {
 
     this.userService.LoginResult.subscribe((profile) => {
       if (profile !== null && profile.Token !== null) {
-        this.fetchAccountList();
+        // this.fetchAccountList();
         this.fetchActionButton();
 
         this.userService.AccountList.subscribe((accountList) => {
@@ -116,7 +116,7 @@ export class ToolbarComponent extends Page implements OnInit {
       this.currentDB = this.userService.UserLogin.FormalName;
 
     if (this.userService.UserLogin) {
-      this.fetchAccountList();
+      // this.fetchAccountList();
     }
 
     setTimeout(() => {
@@ -232,20 +232,20 @@ export class ToolbarComponent extends Page implements OnInit {
     });
   }
 
-  fetchAccountList() {
-    let subscript;
-    const paramsHandler = new ParamsHandler();
-    paramsHandler.addParam(
-      'AccountRefID',
-      this.userService.UserLogin.AccountID
-    );
-    this.userService.accountList(paramsHandler);
-    this.userService.AccountList.subscribe((accountList) => {
-      if (accountList) {
-        this.accountList = accountList;
-        // this.currentDatabase(this.userService.SelectedAccountID);
-      }
-    });
+  // fetchAccountList() {
+    // let subscript;
+    // const paramsHandler = new ParamsHandler();
+    // paramsHandler.addParam(
+    //   'AccountRefID',
+    //   this.userService.UserLogin.AccountID
+    // );
+    // this.userService.accountList(paramsHandler);
+    // this.userService.AccountList.subscribe((accountList) => {
+    //   if (accountList) {
+    //     this.accountList = accountList;
+    //     // this.currentDatabase(this.userService.SelectedAccountID);
+    //   }
+    // });
 
     // subscript = this.userService.accountList$(paramsHandler).subscribe(resp => {
     //   const data = this.parseResponse(resp);
@@ -260,8 +260,8 @@ export class ToolbarComponent extends Page implements OnInit {
     //     this.messageOnNotify(JSON.stringify(error), 'close', 'red-snackbar');
     //   }
     // });
-    this.addSubscription('user-management-accountList', subscript);
-  }
+    // this.addSubscription('user-management-accountList', subscript);
+  // }
 
   getSelectedAccountIcon(accountID: number): string {
     if (accountID == this.userService.SelectedAccountID) {

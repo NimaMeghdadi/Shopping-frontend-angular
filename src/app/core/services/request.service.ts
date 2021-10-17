@@ -10,7 +10,7 @@ import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 export function ApiRequest(
   verb: HttpVerb = 'GET',
-  global: boolean = false
+  global: boolean = true
 ): RequestBuilder {
   return new RequestBuilder(verb, global);
 }
@@ -112,7 +112,7 @@ export class RequestBuilder {
       ? url.substring(0, url.length - 1)
       : url;
   }
-  public call(globalService: GlobalService): Observable<Response<any>> {
+  public call(globalService: GlobalService): Observable<any> {
     const hasParam =
       this.urlParameters !== undefined && this.urlParameters.count() > 0;
     const urlWithParams =
@@ -173,7 +173,7 @@ export class RequestBuilder {
   }
   private messageHandling(
     parent: RequestBuilder,
-    resp: Response<any>,
+    resp: any,
     globalService: GlobalService
   ) {
     if (parent.loading === true) {
