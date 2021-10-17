@@ -1,5 +1,7 @@
 export class User {
   UserID: number;
+  RoleName?: string;
+  RoleID?: number;
   UserName: string;
   BirthDate?: string;
   CreateDate?: number;
@@ -14,6 +16,9 @@ export class User {
   IsDelete?: boolean;
   IsEnable?: boolean;
   Token?: string;
+  CellPhone?:string
+  FormalName?:string
+  AccountName?:string
 }
 
 export class UserLogin extends User {

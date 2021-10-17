@@ -1,7 +1,8 @@
 import { Directive, OnDestroy } from "@angular/core";
 import { SubscriptionLike } from "rxjs";
 import { ParamsHandler } from "../core/params-handler";
-import { Assistant } from "../shared/Pipe/Assistant";
+import { Assistant } from "../main-page/models/Assistant";
+
 
 
 @Directive() 
@@ -61,7 +62,7 @@ export class Page implements OnDestroy, IPage {
             }
         }
         this.refreshUrl();
-        return
+        return null
     }
 
     public resetViewState(params: any): string {

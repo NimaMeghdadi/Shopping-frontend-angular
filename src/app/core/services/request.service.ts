@@ -1,5 +1,4 @@
 import { inject, Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { ParamsHandler } from '../params-handler';
 import { map, catchError, tap } from 'rxjs/operators';
 import { GlobalService } from './global.service';
@@ -8,6 +7,7 @@ import { CachMode, HttpVerb, SchemaName } from '../type/new.type';
 import { RequestAction, RequestController } from '../shared/Request.enum';
 import { Response } from '../type/new.type';
 import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 export function ApiRequest(
   verb: HttpVerb = 'GET',
   global: boolean = false
@@ -169,6 +169,7 @@ export class RequestBuilder {
           tap((resp) => this.messageHandling(this, resp, globalService))
         );
     }
+    return null
   }
   private messageHandling(
     parent: RequestBuilder,

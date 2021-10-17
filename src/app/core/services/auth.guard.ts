@@ -43,6 +43,7 @@ export class AuthGuard implements CanActivate, HttpInterceptor {
   ) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    return true
     if (localStorage.currentUser) {
       const token = JSON.parse(localStorage.currentUser).Token || null;
       if (this.globalService.token || token) {

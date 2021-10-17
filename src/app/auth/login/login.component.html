@@ -1,8 +1,10 @@
 
+
 <form>  
+        <h1>Login</h1>
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Email</mat-label>
-          <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+          <input  placeholder="Username">
           <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
             Please enter a valid email address
           </mat-error>
@@ -14,13 +16,14 @@
     <div class="group">
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>password</mat-label>
-          <input type="password" placeholder="Ex. pat@example.com">
+          <input type="password" placeholder="Password">
         </mat-form-field>
+        <p class="forgot"><a href="#">Forgot Password?</a></p>
+        <button type="button" class="button buttonBlue">Log in
+          <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+        </button>
     </div>
-    <button type="button" class="button buttonBlue">Subscribe
-      <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-    </button>
-  <footer><a href="http://www.polymer-project.org/" target="_blank"><img src="https://www.polymer-project.org/images/logos/p-logo.svg"></a>
+  <footer><a href="http://www.polymer-project.org/" target="_blank"><img src="https://hn-int.com/wp-content/uploads/2020/09/wp-favicon.png"></a>
     <p>You Gotta Love <a href="http://www.polymer-project.org/" target="_blank">Google</a></p>
   </footer>
 

@@ -4,8 +4,8 @@ import { ParamsHandler } from '../params-handler';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Page } from '../Page';
 import { Router } from '@angular/router';
-import { GlobalService } from 'src/app/services/global.service';
-import { ApiRequest } from 'src/app/services/request.service';
+import { GlobalService } from '../services/global.service';
+import { ApiRequest } from '../services/request.service';
 // import { ExporterService } from '../../../../services/exporter.service';
 @Component({
   selector: 'free-bus-dialog',
@@ -29,7 +29,6 @@ export class DataExporterDialogComponent extends Page implements OnInit {
   constructor(
     private dialogRef: MatDialogRef<DataExporterDialogComponent>,
     private snackBar: MatSnackBar,
-    private router: Router,
     @Inject(MAT_DIALOG_DATA) public data: any,
     // private exporterService: ExporterService
     private gs: GlobalService
