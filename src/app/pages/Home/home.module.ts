@@ -5,9 +5,16 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from 'src/shared/material.module';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
-
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { HomeDetailComponent } from './home-detail/home-detail.component';
+import { HomeCardComponent } from './home-card/home-card.component';
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [
+    HomeComponent,
+    SearchBarComponent,
+    HomeDetailComponent,
+    HomeCardComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule,

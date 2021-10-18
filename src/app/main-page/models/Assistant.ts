@@ -3,7 +3,7 @@ export class Assistant {
   public static menuItem: any[] = [
     {
       id: 0,
-      name: 'H&N',
+      // name: 'H&N',
       link: '/search/home',
       fontIcon: '',
       icon: 'https://hn-int.com/wp-content/uploads/2020/09/wp-favicon.png',

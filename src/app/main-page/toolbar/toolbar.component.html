@@ -27,7 +27,11 @@
       (click)="menu_OnClick(menu)"
     >
       <mat-icon *ngIf="menu.fontIcon">{{ menu.fontIcon }}</mat-icon>
-      <img style="width : 30px" *ngIf="menu.icon" src="{{ menu.icon }}" />
+      <img
+        style="width: 45px; padding: 5px"
+        *ngIf="menu.icon"
+        src="{{ menu.icon }}"
+      />
       <span class="link-white">{{ menu.name }}</span>
     </a>
   </div>
