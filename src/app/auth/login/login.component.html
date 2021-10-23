@@ -1,29 +1,28 @@
 <div class="backGround"></div>
-<form>  
-        <h1>Login</h1>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Email</mat-label>
-          <input  placeholder="Username">
-          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-            Please enter a valid email address
-          </mat-error>
-          <mat-error *ngIf="emailFormControl.hasError('required')">
-            Email is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
+<div class="form">
+  <h1>Login</h1>
+  <div class="user" appearance="fill">
+    <input [(ngModel)]="username" placeholder="Username" />
+  </div>
 
-    <div class="group">
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>password</mat-label>
-          <input type="password" placeholder="Password">
-        </mat-form-field>
-        <p class="forgot"><a href="#">Forgot Password?</a></p>
-        <button  type="button" class="button buttonBlue">Log in
-          <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-        </button>
-    </div>
-  <footer><a href="http://www.polymer-project.org/" target="_blank"><img src="https://hn-int.com/wp-content/uploads/2020/09/wp-favicon.png"></a>
-    <p>You Gotta Love <a href="http://www.polymer-project.org/" target="_blank">Google</a></p>
+  <pre></pre>
+
+  <div class="group">
+    <!-- <mat-form-field class="example-full-width" appearance="fill"> -->
+    <input [(ngModel)]="password" type="password" placeholder="Password" />
+    <!-- </mat-form-field> -->
+    <p class="forgot"><a href="#">Forgot Password?</a></p>
+    <button (click)="loginReq()" type="button" class="button buttonBlue">
+      Log in
+      <div class="ripples buttonRipples">
+        <span class="ripplesCircle"></span>
+      </div>
+    </button>
+  </div>
+  <footer>
+    <a routerLink="../search/home"
+      ><img src="https://hn-int.com/wp-content/uploads/2020/09/wp-favicon.png"
+    /></a>
+    <p>Design by <a routerLink="search/home" target="_blank">H&N</a></p>
   </footer>
-
-</form>
+</div>
