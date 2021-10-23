@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthGuard } from './core/services/auth.guard';
 import { MainPageComponent } from './main-page/main-page.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
 
 const routes: Routes = [
   {
@@ -13,13 +14,16 @@ const routes: Routes = [
         path: '',
         loadChildren: () =>
           import('./pages/search-routes.module').then((m) => m.SearchRoutesModule),
-        canActivate: [AuthGuard],
       },
     ],
   },
   {
     path:"login",
     component:LoginComponent
+  },
+  {
+    path:"sign-up",
+    component:SignUpComponent
   }
 ];
 

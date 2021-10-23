@@ -21,6 +21,7 @@ import { RequestBuilder } from './core/services/request.service';
 import { AuthGuard } from './core/services/auth.guard';
 import { HttpErrorInterceptorService } from './core/services/http-error-interceptor.service';
 import { CommonModule } from '@angular/common';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { CommonModule } from '@angular/common';
     ToolbarComponent,
     NavbarComponent,
     ProfileDialogComponent,
+    SignUpComponent,
     
   ],
   imports: [
