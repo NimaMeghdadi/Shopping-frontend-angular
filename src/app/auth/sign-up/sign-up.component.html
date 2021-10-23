@@ -1,31 +1,31 @@
-<form>  
-    <h1>Sign Up</h1>
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Email</mat-label>
-      <input  placeholder="Username">
-      <mat-error >
-        Please enter a valid email address
-      </mat-error>
-      <mat-error >
-        Email is <strong>required</strong>
-      </mat-error>
-    </mat-form-field>
+<div class="backGround"></div>
+<div class="form">
+  <h1>Sign Up</h1>
+  <div class="example-full-width" appearance="fill">
+    <input [(ngModel)]="username" placeholder="Username" required />
+  </div>
+  <pre></pre>
+  <div class="group">
+    <div class="example-full-width" appearance="fill">
+      <input [(ngModel)]="password" type="password" placeholder="Password" />
+    </div>
 
-<div class="group">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>password</mat-label>
-      <input type="password" placeholder="Password">
-    </mat-form-field>
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>password</mat-label>
-        <input type="password" placeholder="Confirm Password">
-    </mat-form-field>
+    <div class="example-full-width" appearance="fill">
+      <input
+        [(ngModel)]="repassword"
+        type="password"
+        placeholder="Confirm Password"
+      />
+    </div>
+  </div>
+  <button type="button" (click)="addUserReq()" class="button buttonBlue">
+    Create Account
+    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+  </button>
+  <footer>
+    <a routerLink="search/home" target="_blank"
+      ><img src="https://hn-int.com/wp-content/uploads/2020/09/wp-favicon.png"
+    /></a>
+    <p>Design by <a routerLink="search/home" target="_blank">H&N</a></p>
+  </footer>
 </div>
-<button type="button" class="button buttonBlue">Create Account
-  <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-</button>
-<footer><a href="http://www.polymer-project.org/" target="_blank"><img src="https://hn-int.com/wp-content/uploads/2020/09/wp-favicon.png"></a>
-<p>made with H&N<a href="https://www.google.com/" target="_blank">google</a></p>
-</footer>
-
-</form>
