@@ -133,9 +133,10 @@ export class RequestBuilder {
           tap((resp) => this.messageHandling(this, resp, globalService))
         );
     } else if (this.verb === 'POST') {
+      const posthdr = new HttpHeaders({'Content-Type': 'application/json'});
       return globalService.http
         .post(urlWithParams, this.bodyParameters.toJson(), {
-          headers: hdrs,
+          headers: posthdr,
           params: token,
         })
         .pipe(
