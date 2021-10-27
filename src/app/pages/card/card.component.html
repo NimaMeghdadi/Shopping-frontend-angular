@@ -1,0 +1,9 @@
+<mat-card *ngFor="let product of products">
+  <img class="img" [src]="product.imgUrls" />
+  <div>
+    <h4>{{ product.name }}</h4>
+    <p>
+      {{ product.description }}
+    </p>
+  </div>
+</mat-card>
