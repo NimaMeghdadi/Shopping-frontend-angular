@@ -6,7 +6,10 @@
       (closed)="expansion_onClose(expansionPanel)"
       hideToggle
     >
-      <mat-expansion-panel-header style="padding: 0 10px;" *ngIf="showSearchHeader">
+      <mat-expansion-panel-header
+        style="padding: 0 10px"
+        *ngIf="showSearchHeader"
+      >
         <mat-icon class="search-search">search</mat-icon>
         <input
           class="search-input"
@@ -53,6 +56,36 @@
                     [(ngModel)]="viewState.name"
                   />
                 </mat-form-field>
+              </div>
+            </div>
+            <div class="row center">
+              <div class="col-2">
+                <span>Sort By Price</span>
+              </div>
+              <div class="col ">
+                <mat-form-field appearance="fill" class="width-75 ">
+                  <mat-select [(ngModel)]="viewState.sortByPrice">
+                    <mat-option value="1"> Low To High </mat-option>
+                    <mat-option value="0"> High To Low </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="row center">
+              <div class="col-1">
+                <span>Price</span>
+              </div>
+              <div class="col">
+                <div class="full-width">
+                  <ng5-slider
+                    *ngIf="viewState.rangeSlider"
+                    [(value)]="viewState.rangeSlider.minValue"
+                    [(highValue)]="viewState.rangeSlider.maxValue"
+                    [options]="viewState.rangeSlider.options"
+                  ></ng5-slider>
+                </div>
               </div>
             </div>
           </div>

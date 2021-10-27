@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { Ng5SliderModule } from 'ng5-slider';
 import { MaterialModule } from 'src/shared/material.module';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
@@ -22,6 +23,7 @@ import { HomeCardComponent } from './home-card/home-card.component';
     ReactiveFormsModule,
     MaterialModule,
     HomeRoutingModule,
+    Ng5SliderModule
   ],
   providers: [],
 })

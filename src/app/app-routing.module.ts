@@ -8,19 +8,21 @@ import { AddProductComponent } from './main-page/toolbar/add-product/add-product
 
 const routes: Routes = [
   {
-    path:'search',
-    component:MainPageComponent,
-    children:[
+    path: 'search',
+    component: MainPageComponent,
+    children: [
       {
         path: '',
         loadChildren: () =>
-          import('./pages/search-routes.module').then((m) => m.SearchRoutesModule),
+          import('./pages/search-routes.module').then(
+            (m) => m.SearchRoutesModule
+          ),
       },
     ],
   },
   {
-    path:"login",
-    component:LoginComponent
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path:"sign-up",
@@ -29,11 +31,12 @@ const routes: Routes = [
   {
     path:"add-product",
     component:AddProductComponent
-  }
+  },
+  { path: '**', redirectTo: 'search/home' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
