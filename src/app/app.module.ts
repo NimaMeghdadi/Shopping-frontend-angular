@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,7 +21,7 @@ import { AuthGuard } from './core/services/auth.guard';
 import { HttpErrorInterceptorService } from './core/services/http-error-interceptor.service';
 import { CommonModule } from '@angular/common';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
-
+import { AddProductComponent } from './main-page/toolbar/add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +33,7 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
     NavbarComponent,
     ProfileDialogComponent,
     SignUpComponent,
+    AddProductComponent,
     
   ],
   imports: [

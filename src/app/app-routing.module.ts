@@ -4,6 +4,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { AuthGuard } from './core/services/auth.guard';
 import { MainPageComponent } from './main-page/main-page.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { AddProductComponent } from './main-page/toolbar/add-product/add-product.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path:"sign-up",
     component:SignUpComponent
+  },
+  {
+    path:"add-product",
+    component:AddProductComponent
   }
 ];
 

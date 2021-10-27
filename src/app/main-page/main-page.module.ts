@@ -9,6 +9,8 @@ import { MaterialModule } from '../shared/material.module';
 // import { DriverComponent } from 'pages/driver/driver.component';
 import { SearchPanelComponent } from '../controls/search-panel/search-panel.component';
 import { FormsModule } from '@angular/forms';
+import { AddProductComponent } from './toolbar/add-product/add-product.component';
+import { ImageUploadComponent } from './toolbar/add-product/image-upload/image-upload.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { FormsModule } from '@angular/forms';
     // BrowserAnimationsModule,
     // NoopAnimationsModule,
     SearchPanelComponent,
+    AddProductComponent,
+    ImageUploadComponent,
   ],
   imports: [CommonModule, MainPageRoutingModule, MaterialModule, FormsModule],
 })
