@@ -12,9 +12,13 @@
   justify-content: center !important;
 }
 
+.width-75 {
+  width: 75%;
+}
+
 .property_form {
   padding: 30px;
-  background:rgb(255 255 255 / 64%);
+  background: rgb(255 255 255 / 64%);
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -70,43 +74,41 @@ textarea {
   margin-top: 10px;
 }
 .slider_area::before {
-    background: #001D38;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    content: '';
-    opacity: .6;
+  background: #001d38;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  opacity: 0.6;
 }
 
+// <------------------------ material ------------------------>
+.ng5-slider-pointer {
+  background-color: #fdad5c !important;
+}
+.ng5-slider-active::after {
+  background-color: #fd8f5e !important;
+}
+.ng5-slider .ng5-slider-bubble {
+  color: whitesmoke !important;
+}
+.ng5-slider .ng5-slider-selection {
+  background: #fdad5c !important;
+}
+.mat-form-field-label {
+  color: #fdad5c !important;
+}
+.mat-select-arrow {
+  color: #fdad5c !important;
+}
+.mat-select-value {
+  color: whitesmoke;
+}
 
-// <------------------------ material ------------------------> 
-// .ng5-slider-pointer {
-//   background-color: #fdad5c !important;
-// }
-// .ng5-slider-active::after {
-//   background-color: #fd8f5e !important;
-// }
-// .ng5-slider .ng5-slider-bubble {
-//   color: whitesmoke !important;
-// }
-// .ng5-slider .ng5-slider-selection {
-//   background: #fdad5c !important;
-// }
-// .mat-form-field-label {
-//   color: #fdad5c !important;
-// }
-// .mat-select-arrow{
-//   color: #fdad5c !important;
-// }
-// .mat-select-value{
-//   color: whitesmoke;
-// }
-
-// // <------------------------ End material ------------------------> 
-// // <------------------------ Start Search ------------------------> 
-
+// <------------------------ End material ------------------------>
+// <------------------------ Start Search ------------------------>
 
 // search
 
@@ -194,14 +196,13 @@ textarea {
   height: fit-content;
 }
 
-.mat-form-field-underline{
+.mat-form-field-underline {
   background-color: #eceff1 !important;
 }
 
-.mat-expansion-panel-body{
+.mat-expansion-panel-body {
   padding: 11px 24px 16px !important;
 }
-
 
 .export-button {
   z-index: 3;
@@ -211,9 +212,7 @@ textarea {
     margin-left: -5px;
     color: #1a73e8;
   }
-
 }
-
 
 .bootstrap-wrapper {
   .col-2 {
@@ -238,4 +237,4 @@ textarea {
   font-size: large;
 }
 
-// // <------------------------ end Search ------------------------> 
+// // <------------------------ end Search ------------------------>

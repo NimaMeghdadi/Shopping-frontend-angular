@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Product} from '../../shared/models/product.model';
+import { Product } from '../../shared/models/product.model';
 
 @Component({
   selector: 'app-home-card',
@@ -12,5 +12,4 @@ export class HomeCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
 }
