@@ -104,12 +104,13 @@ export class ToolbarComponent extends Page implements OnInit {
         icon: '../../../assets/profile/test.png',
       },
     ];
-    this.actionButtonList = this.actionButtonList.filter(
-      (a) => a.admin === this.IsAdminRole() || a.admin === false
-    );
+    // this.actionButtonList = this.actionButtonList.filter(
+    //   (a) => a.admin === this.IsAdminRole() || a.admin === false
+    // );
   }
 
   ngOnInit() {
+    this.getData();
     this.menuItems = Assistant.menuItem;
     this.fetchActionButton();
     if (this.userService.UserLogin.FormalName)
@@ -137,6 +138,12 @@ export class ToolbarComponent extends Page implements OnInit {
         Assistant.menuItem[i++].width = item['offsetWidth'];
       }
     }
+  }
+
+  userName = '';
+  getData() {
+    let user = this.gs.getJWTPeyload();
+    if (user && user['username']) this.userName = user['username'];
   }
 
   userLogout() {
@@ -216,7 +223,7 @@ export class ToolbarComponent extends Page implements OnInit {
       return this.userService.UserLogin.RoleName == 'Administrator'
         ? true
         : false;
-    }else return null
+    } else return null;
   }
 
   accountChange_OnClick(account: any) {
@@ -231,37 +238,6 @@ export class ToolbarComponent extends Page implements OnInit {
       }
     });
   }
-
-  // fetchAccountList() {
-    // let subscript;
-    // const paramsHandler = new ParamsHandler();
-    // paramsHandler.addParam(
-    //   'AccountRefID',
-    //   this.userService.UserLogin.AccountID
-    // );
-    // this.userService.accountList(paramsHandler);
-    // this.userService.AccountList.subscribe((accountList) => {
-    //   if (accountList) {
-    //     this.accountList = accountList;
-    //     // this.currentDatabase(this.userService.SelectedAccountID);
-    //   }
-    // });
-
-    // subscript = this.userService.accountList$(paramsHandler).subscribe(resp => {
-    //   const data = this.parseResponse(resp);
-    //   if (data) {
-    //     this.accountList = data.Account;
-    //     this.currentDatabase(data.Account);
-    //   }
-    // }, error => {
-    //   if (error.status === 401) { // Unauthorized
-    //     this.router.navigate(['/logout']);
-    //   } else {
-    //     this.messageOnNotify(JSON.stringify(error), 'close', 'red-snackbar');
-    //   }
-    // });
-    // this.addSubscription('user-management-accountList', subscript);
-  // }
 
   getSelectedAccountIcon(accountID: number): string {
     if (accountID == this.userService.SelectedAccountID) {
@@ -286,7 +262,8 @@ export class ToolbarComponent extends Page implements OnInit {
 
   windowOnResize(event) {
     this.updateVisibleMenu();
-    this.menuItems = Assistant.menuItem.filter((item) => item.location == 0);
+    // this.menuItems = Assistant.menuItem
+    // .filter((item) => item.location == 0);
     this.sidNavActive = this.menuItems.length != Assistant.menuItem.length;
     this.itemLength = this.menuItems.length;
   }
@@ -326,5 +303,9 @@ export class ToolbarComponent extends Page implements OnInit {
         return true;
       } else return null;
     });
+  }
+
+  isLogin() {
+    return localStorage.getItem('jwt') ? true : false;
   }
 }
