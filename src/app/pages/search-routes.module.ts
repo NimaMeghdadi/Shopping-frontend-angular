@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AddProductComponent } from '../main-page/toolbar/add-product/add-product.component';
 
 const routes: Routes = [
   {
@@ -9,6 +10,10 @@ const routes: Routes = [
   {
     path: 'mycard',
     loadChildren: () => import('./card/card.module').then((m) => m.CardModule),
+  },
+  {
+    path: 'addproduct',
+    component: AddProductComponent,
   },
   { path: '**', redirectTo: 'search/home' },
 ];
