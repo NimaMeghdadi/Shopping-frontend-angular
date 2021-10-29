@@ -1,4 +1,4 @@
-<div class="backGround"></div>
+<!-- <div class="backGround"></div> -->
 <div class="body">
   <form class="form" [formGroup]='addProductForm'>
     <h1>ADD Product</h1>
@@ -10,22 +10,19 @@
     </mat-form-field>
 
     <mat-form-field class="category-form" appearance="fill">
-      <mat-label>category</mat-label>
-      <mat-select formControlName="category" multiple required>
-        <mat-select-trigger>
-          {{category.value ? category.value[0] : ''}}
-          <span *ngIf="category.value?.length > 1" class="example-additional-selection">
-            (+{{category.value.length - 1}} {{category.value?.length === 2 ? 'other' : 'others'}})
-          </span>
-        </mat-select-trigger>
-        <mat-option *ngFor="let category of categoryList" [value]="category">{{category}}</mat-option>
+      <mat-label>Category</mat-label>
+      <mat-select formControlName="category" required>
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let category of categoryList" [value]="category">
+          {{category}}
+        </mat-option>
       </mat-select>
-      <mat-error></mat-error>
+      <mat-error *ngIf="addProductForm.hasError('required')">Please choose an animal</mat-error>
     </mat-form-field>
 
     <mat-form-field class="describe-form" appearance="fill">
       <mat-label>Describe your product ... </mat-label>
-      <textarea matInput placeholder="Ex. It has ..."></textarea>
+      <textarea matInput formControlName="describtion" placeholder="Ex. It has ..."></textarea>
     </mat-form-field>
 
     <mat-form-field class="price-form" appearance="fill">
@@ -41,7 +38,7 @@
     </mat-form-field>
 
     <div class="example-button-container">
-      <button mat-fab color="warn" aria-label="Example icon button with a home icon">
+      <button mat-fab color="warn" (click)="addProductReq()" aria-label="Example icon button with a home icon">
         <mat-icon>add</mat-icon>
       </button>
     </div>

@@ -28,10 +28,7 @@ const routes: Routes = [
     path:"sign-up",
     component:SignUpComponent
   },
-  {
-    path:"add-product",
-    component:AddProductComponent
-  },
+
   { path: '**', redirectTo: 'search/home' },
 ];
 
