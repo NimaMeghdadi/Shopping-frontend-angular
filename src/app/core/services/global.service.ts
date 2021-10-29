@@ -6,6 +6,7 @@ import { RequestBuilder } from './request.service';
 import { Response, Dictionary } from '../type/new.type';
 import { Toaster } from '../toast-notification';
 import { Router } from '@angular/router';
+import jwt_decode from 'jwt-decode';
 @Injectable({
   providedIn: 'root',
 })
@@ -72,6 +73,10 @@ export class GlobalService {
     this.repository.userLogin = null;
     this.login$.next(this.repository.userLogin);
     this.router.navigate(['/login']);
+  }
+
+  public getJWTPeyload() {
+    return jwt_decode(localStorage.getItem('jwt'));
   }
 }
 export interface Repository extends Dictionary<any> {
