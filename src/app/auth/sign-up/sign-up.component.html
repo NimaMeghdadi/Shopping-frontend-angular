@@ -1,31 +1,33 @@
 <div class="backGround"></div>
 <div class="form">
-  <h1>Sign Up</h1>
-  <div class="example-full-width" appearance="fill">
-    <input [(ngModel)]="username" placeholder="Username" required />
-  </div>
-  <pre></pre>
-  <div class="group">
-    <div class="example-full-width" appearance="fill">
-      <input [(ngModel)]="password" type="password" placeholder="Password" />
-    </div>
 
-    <div class="example-full-width" appearance="fill">
-      <input
-        [(ngModel)]="repassword"
-        type="password"
-        placeholder="Confirm Password"
-      />
-    </div>
-  </div>
-  <button type="button" (click)="addUserReq()" class="button buttonBlue">
-    Create Account
-    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-  </button>
-  <footer>
-    <a routerLink="search/home" target="_blank"
+<form>
+    <h1>Sign Up</h1>
+    <mat-form-field class="username">
+      <mat-label>Username</mat-label>
+      <input matInput required>
+  <mat-error>fill this </mat-error>
+</mat-form-field>
+
+<mat-form-field class="password">
+  <mat-label>Password</mat-label>
+  <input type="password" matInput required>
+  <mat-error>pls fill this</mat-error>
+</mat-form-field>
+
+<mat-form-field class="repassword">
+  <mat-label>Confirm Password</mat-label>
+  <input type="password" matInput required>
+  <mat-error>pls fill this</mat-error>
+</mat-form-field>
+
+<button class="signUpBtn" (click) = "addUserReq()" mat-raised-button color="primary">Create New Account</button>
+
+    <footer>
+      <a routerLink="search/home"
       ><img src="https://hn-int.com/wp-content/uploads/2020/09/wp-favicon.png"
-    /></a>
-    <p>Design by <a routerLink="search/home" target="_blank">H&N</a></p>
-  </footer>
+      /></a>
+      <p>Design by <a routerLink="search/home" >H&N</a></p>
+    </footer>
+  </form>
 </div>
